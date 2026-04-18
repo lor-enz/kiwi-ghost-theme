@@ -3,9 +3,13 @@ $(function () {
     featured();
     pagination(false);
     initParticles();
+    addParticlesPointerSupport();
 
     if (window.matchMedia) {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', initParticles);
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+            initParticles();
+            addParticlesPointerSupport();
+        });
     }
 });
 
@@ -54,15 +58,48 @@ function initParticles() {
         interactivity: {
             detect_on: 'canvas',
             events: {
-                onhover: { enable: true, mode: 'grab' },
+                onhover: { enable: true, mode: 'repulse' },
                 onclick: { enable: false },
                 resize: true
             },
             modes: {
-                grab: { distance: 140, line_linked: { opacity: 0.6 } }
+                repulse: { distance: 100 }
             }
         },
         retina_detect: true
+    });
+}
+
+function addParticlesPointerSupport() {
+    var cover = document.querySelector('.cover');
+    if (!cover || !window.pJSDom || !window.pJSDom.length) { return; }
+
+    function updateFromClient(clientX, clientY) {
+        var pJS = window.pJSDom[0].pJS;
+        var rect = pJS.canvas.el.getBoundingClientRect();
+        pJS.interactivity.mouse.pos_x = (clientX - rect.left) * pJS.canvas.pxratio;
+        pJS.interactivity.mouse.pos_y = (clientY - rect.top) * pJS.canvas.pxratio;
+        pJS.interactivity.status = 'mousemove';
+    }
+
+    cover.addEventListener('mousemove', function (e) {
+        updateFromClient(e.clientX, e.clientY);
+    });
+
+    cover.addEventListener('mouseleave', function () {
+        window.pJSDom[0].pJS.interactivity.status = 'mouseleave';
+    });
+
+    cover.addEventListener('touchstart', function (e) {
+        updateFromClient(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    cover.addEventListener('touchmove', function (e) {
+        updateFromClient(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+
+    cover.addEventListener('touchend', function () {
+        window.pJSDom[0].pJS.interactivity.status = 'mouseleave';
     });
 }
 
