@@ -6,17 +6,27 @@
             </div>
         {{/if}}
 
-        {{#if @site.description}}
-            <div class="cover-description">{{@site.description}}</div>
+        {{#if @custom.hero_name}}
+            <h1 class="cover-title">{{@custom.hero_name}}</h1>
         {{/if}}
 
-        {{#if @site.members_enabled}}
-            {{#unless @member}}
-            <div class="cover-cta">
-                <button class="button members-subscribe" data-portal="signup">{{t "Subscribe now"}}</button>
-                <button class="button button-secondary members-login" data-portal="signin">{{t "Login"}}</button>
-            </div>
-            {{/unless}}
+        {{#if @custom.hero_tagline}}
+            <p class="cover-tagline">{{@custom.hero_tagline}}</p>
         {{/if}}
+
+        <div class="cover-chips">
+            {{#if @custom.github_url}}
+                <a class="cover-chip" href="{{@custom.github_url}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/github"}}
+                    <span>Check out my GitHub</span>
+                </a>
+            {{/if}}
+            {{#if @custom.linkedin_url}}
+                <a class="cover-chip" href="{{@custom.linkedin_url}}" target="_blank" rel="noopener noreferrer">
+                    {{> "icons/linkedin"}}
+                    <span>Visit my LinkedIn</span>
+                </a>
+            {{/if}}
+        </div>
     </div>
 </div>

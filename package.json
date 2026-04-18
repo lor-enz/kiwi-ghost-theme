@@ -1,5 +1,5 @@
 {
-    "name": "dawn",
+    "name": "sunset-kiwi-eating",
     "description": "A Ghost theme",
     "version": "1.0.0",
     "private": true,
@@ -74,6 +74,24 @@
             },
             "white_logo_for_dark_mode": {
                 "type": "image"
+            },
+            "hero_name": {
+                "type": "text",
+                "default": "Your Name",
+                "group": "homepage"
+            },
+            "hero_tagline": {
+                "type": "text",
+                "default": "A short description of who you are",
+                "group": "homepage"
+            },
+            "github_url": {
+                "type": "text",
+                "group": "homepage"
+            },
+            "linkedin_url": {
+                "type": "text",
+                "group": "homepage"
             },
             "show_featured_posts": {
                 "type": "boolean",
