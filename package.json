@@ -1,6 +1,6 @@
 {
-    "name": "sunset-kiwi-eating",
-    "description": "A Ghost theme",
+    "name": "kiwi",
+    "description": "Ghost Theme based on the official Dawn theme customized for personal use for a more portfolio oriented website.",
     "version": "1.0.0",
     "private": true,
     "engines": {
@@ -8,16 +8,16 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Lorenz B",
+        "email": "git@lorenz.kiwi",
+        "url": "https://www.lorenz.kiwi"
     },
     "keywords": [
         "ghost",
         "theme",
         "ghost-theme"
     ],
-    "docs": "https://dawn.ghost.io/about/",
+    "docs": "https://github.com/lor-enz/kiwi-ghost-theme/",
     "config": {
         "posts_per_page": 5,
         "image_sizes": {
