@@ -51,6 +51,14 @@
     margin-top: 4.5rem;
 }
 
+.single-media .u-placeholder {
+    background-color: transparent;
+}
+
+.single-media .u-object-fit {
+    object-fit: contain;
+}
+
 .single-cta {
     padding: 3rem;
     margin-top: 4rem !important;

@@ -2,11 +2,38 @@
     margin-top: 60px;
 }
 
-.featured-wrapper .u-placeholder {
-    margin-bottom: 24px;
+.featured-feed .owl-stage {
+    display: flex;
+}
+
+.featured-feed .owl-item {
+    display: flex;
+}
+
+.featured-feed .post {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1.5px solid var(--light-gray-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+.featured-feed .post:hover {
+    border-color: var(--color-darkgrey, #333);
+}
+
+.featured-feed .u-placeholder {
+    margin: 16px 16px 0;
+    background-color: transparent;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 .featured-wrapper .post-title {
+    flex: 1;
+    padding: 16px;
     margin-bottom: 0;
     font-size: 1.8rem;
     font-weight: 700;
