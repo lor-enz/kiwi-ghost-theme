@@ -67,8 +67,22 @@
 }
 
 @media (max-width: 767px) {
-    .featured-feed .owl-item {
-        padding: 0 var(--gap);
+    .featured-feed .owl-dots {
+        margin-top: 16px;
+    }
+
+    .featured-feed .owl-dot {
+        background-color: transparent;
+    }
+
+    .featured-feed .owl-dot span {
+        background-color: transparent;
+        border: 1.5px solid var(--mid-gray-color);
+    }
+
+    .featured-feed .owl-dot.active span {
+        background-color: var(--dark-gray-color);
+        border-color: var(--dark-gray-color);
     }
 }
 

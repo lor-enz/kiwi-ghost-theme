@@ -116,6 +116,8 @@ function featured() {
         responsive: {
             0: {
                 items: 1,
+                stagePadding: 40,
+                dots: true,
             },
             768: {
                 items: 2,
