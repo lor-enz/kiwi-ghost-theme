@@ -8,7 +8,6 @@
 @import "site/header.css";
 @import "site/cover.css";
 @import "blog/feed.css";
-@import "blog/featured.css";
 @import "blog/pagination.css";
 @import "blog/single.css";
 @import "blog/table.css";
@@ -19,6 +18,7 @@
 @import "blog/comment.css";
 @import "blog/tag.css";
 @import "misc/owl.css";
+@import "blog/featured.css";
 @import "misc/utils.css";
 @import "misc/animations.css";
 @import "misc/dark.css";
